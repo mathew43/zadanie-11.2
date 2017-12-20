@@ -1,5 +1,10 @@
+$(function(){
+	console.log('DOM loaded - you can have fun');
+});
+
 function Button(text) {
 	this.text = text || 'Hello';
+	this.test = 123;
 }
 
 Button.prototype = {
@@ -9,11 +14,14 @@ Button.prototype = {
 		this.$element.text(this.text);
 		this.$element.click(function(){
 			alert(self.text);
-		$('body').append(this.$element);
+			console.log(this);
 		})
+		$('body').append(this.$element);
+
 	}
 }
 
-var btn1 = new Button('Hello!');
+var btn1 = new Button('abc');
+console.log(btn1);
 
 btn1.create();
